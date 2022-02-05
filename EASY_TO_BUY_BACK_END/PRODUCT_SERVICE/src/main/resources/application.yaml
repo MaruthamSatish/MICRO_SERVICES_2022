@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: product-service
+  profiles:
+    active: ${environmentName}
+management:
+  endpoint:
+    health:
+      show-details: always
+
+  endpoints:
+    web:
+      exposure:
+        include: '*'

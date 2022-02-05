@@ -1,0 +1,141 @@
+<br>
+<div class="container checkOutDiv">
+<form [formGroup]="checkoutFormGroup" class="checkOutForm" (ngSubmit)="onSubmit()">
+    
+  <mdb-card  class="col-md-4">
+    
+    <div formGroupName="customer">
+        <p class="h4 mb-4">Customer </p>
+  
+        <!-- First Name -->
+        <input type="text" formControlName="firstName" mdbInput class="form-control mb-4" placeholder="First Name">
+
+        <!-- Last Name -->
+        <input type="text" formControlName="lastName" mdbInput class="form-control mb-4" placeholder="Last Name">
+
+        <!-- Email -->
+        <input type="email" formControlName="email" id="defaultContactFormEmail" mdbInput class="form-control mb-4"
+            placeholder="E-mail">
+
+    </div>
+    </mdb-card>
+    <br>
+    <!--Shipping Address -->
+    <mdb-card  class="col-md-4">
+    <div formGroupName="shippingAddress">
+        <p class="h4 mb-4">Shipping Address</p>
+
+        <!-- Country -->
+        <label class="displayLabel">Country</label>
+        <select formControlName="country" class="browser-default custom-select mb-4">
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>India</option>
+            <option value="2">USA</option>
+        </select>
+        <!-- Street-->
+        <input type="text" formControlName="street" mdbInput class="form-control mb-4" placeholder="Street">
+
+        <!-- City -->
+        <input type="text" formControlName="city" mdbInput class="form-control mb-4" placeholder="City">
+
+        <!-- State -->
+        <label class="displayLabel">State</label>
+        <select formControlName="state" class="browser-default custom-select mb-4">
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>Andhra Pradesh</option>
+            <option value="2">USA</option>
+        </select>
+
+        <!-- ZipCode -->
+        <input type="text" formControlName="zipCode" mdbInput class="form-control mb-4" placeholder="ZipCode">
+    </div>
+ </mdb-card>
+    <br>
+    <!-- Default unchecked -->
+    <mdb-checkbox [default]="true" (change)="copyShippingAddressToBillingAddress($event)">Is Billing Address is Same As
+        Shipping Address</mdb-checkbox>
+    <!--Billing Address -->
+    <mdb-card  class="col-md-4">    
+        <div formGroupName="billingAddress">
+        <p class="h4 mb-4">Billing Address</p>
+
+        <!-- Country -->
+        <label class="displayLabel">Country</label>
+        <select formControlName="country" class="browser-default custom-select mb-4">
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>India</option>
+            <option value="2">USA</option>
+        </select>
+        <!-- Street-->
+        <input type="text" formControlName="street" mdbInput class="form-control mb-4" placeholder="Street">
+
+        <!-- City -->
+        <input type="text" formControlName="city" mdbInput class="form-control mb-4" placeholder="City">
+
+        <!-- State -->
+        <label class="displayLabel">State</label>
+        <select formControlName="state" class="browser-default custom-select mb-4">
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>Andhra Pradesh</option>
+            <option value="2">USA</option>
+        </select>
+
+        <!-- ZipCode -->
+        <input type="text" formControlName="zipCode" mdbInput class="form-control mb-4" placeholder="ZipCode">
+    </div>
+    </mdb-card>
+    <br>
+    <mdb-card  class="col-md-4">
+    <div formGroupName="creditCard">
+        <p class="h4 mb-4">Credit Card</p>
+
+        <!-- Card Type -->
+
+        <label class="displayLabel">Card Type</label>
+        <select formControlName="cardType" class="browser-default custom-select mb-4">
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>Visa</option>
+            <option value="2">Master Card</option>
+        </select>
+
+
+        <!-- Name on Card-->
+        <input type="text" formControlName="nameOnCard" mdbInput class="form-control mb-4" placeholder="Name On Card">
+
+        <!-- Card Number -->
+        <input type="text" formControlName="cardNumber" mdbInput class="form-control mb-4" placeholder="Card Number">
+
+        <input type="text" formControlName="securityCode" mdbInput class="form-control mb-4"
+            placeholder="Security Code">
+        <!-- Expiration Month -->
+        <label class="displayLabel">Expiration Month</label>
+        <select formControlName="expirationMonth" class="browser-default custom-select mb-4">
+            <option value="" disabled selected>Choose option</option>
+            <option value="1">Jan</option>
+            <option value="2">Feb</option>
+        </select>
+        <!-- Expiration Year -->
+        <label class="displayLabel">Expiration Year</label>
+        <select formControlName="expirationYear" class="browser-default custom-select mb-4">
+            <option value="" disabled selected>Choose option</option>
+            <option value="1">2021</option>
+            <option value="2">2022</option>
+        </select>
+    </div>
+    
+    </mdb-card>
+    <br>
+    <mdb-card  class="col-md-4">
+        <mdb-card-header class="view view-cascade gradient-card-header peach-gradient"> Review Your Order</mdb-card-header>
+            <p>Total Quantity: {{ totalQuantity }}</p>
+                  <mdb-badge pill="true" default="true">Shipping: FREE</mdb-badge>
+            <p>Total Price: {{ totalPrice | currency: 'INR' }}</p>
+        </mdb-card>
+    
+    <button type="submit" mdbBtn color="primary" mdbWavesEffect>Purchase</button>
+</form>
+
+</div>
+<br>
+<br>
+<!-- Default form contact -->

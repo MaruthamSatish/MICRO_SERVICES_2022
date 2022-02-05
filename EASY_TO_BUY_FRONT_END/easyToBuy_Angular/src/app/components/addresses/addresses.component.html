@@ -1,0 +1,152 @@
+<br>
+
+<div class="d-flex">
+    <!-- Card -->
+    <mdb-card
+    style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/City/6-col/img%20(47).jpg')"
+    class="card-image mb-3 mx-2"
+  >
+      <!-- Content -->
+      <div class="text-white text-center d-flex align-items-center rgba-indigo-strong py-5 px-4">
+        <div>
+            <h5 class="pink-text">
+              <mdb-icon fas icon="address-card"></mdb-icon>
+              Address
+            </h5>
+            <h3 class="card-title pt-2"><strong>Satish Marutham</strong></h3>
+            <p>
+              S/O Marutham Prabhakar Reddy<br>
+              Panchedu(Village)<br>
+              Buchi Reddy Palem(Mandle)<br>
+              Nellore(Dist)<br>
+              Andhra Pradesh -524306
+            </p>
+            <a mdbBtn color="pink" class="waves-light" mdbWavesEffect>
+                <mdb-icon far icon="address-card" class="left"></mdb-icon>
+                  Edit</a>
+              <a mdbBtn color="pink" class="waves-light" mdbWavesEffect>
+                <mdb-icon far icon="address-card" class="left"></mdb-icon>
+                  Delete</a>
+          </div>
+      </div>
+      <!-- Content -->
+    </mdb-card>
+    <!-- Card -->
+  
+    <!-- Card -->
+    <mdb-card
+      style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/City/6-col/img%20(47).jpg')"
+      class="card-image mb-3 mx-2"
+    >
+      <!-- Content -->
+      <div class="text-white text-center d-flex align-items-center rgba-indigo-strong py-5 px-4">
+        <div>
+            <h5 class="pink-text">
+              <mdb-icon fas icon="address-card"></mdb-icon>
+              Address
+            </h5>
+            <h3 class="card-title pt-2"><strong>Satish Marutham</strong></h3>
+            <p>
+              S/O Marutham Prabhakar Reddy<br>
+              Panchedu(Village)<br>
+              Buchi Reddy Palem(Mandle)<br>
+              Nellore(Dist)<br>
+              Andhra Pradesh -524306
+            </p>
+            <a mdbBtn color="pink" class="waves-light" mdbWavesEffect>
+                <mdb-icon far icon="address-card" class="left"></mdb-icon>
+                  Edit</a>
+              <a mdbBtn color="pink" class="waves-light" mdbWavesEffect>
+                <mdb-icon far icon="address-card" class="left"></mdb-icon>
+                  Delete</a>
+          </div>
+      </div>
+      <!-- Content -->
+    </mdb-card>
+    <!-- Card -->
+    
+  </div>
+
+  <button type="button" mdbBtn color="pink" rounded="true" data-toggle="modal" data-target="#basicExample"
+        (click)="frame.show()" mdbWavesEffect>Add New Address
+        <mdb-icon far icon="address-card" class="left"></mdb-icon>
+</button>
+<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Shipping Address</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+          <input type="text" id="form34" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalName">
+          <label for="form34">Your name</label>
+          <mdb-error
+            *ngIf="contactFormModalName.invalid && (contactFormModalName.dirty || contactFormModalName.touched)">Input
+            invalid
+          </mdb-error>
+          <mdb-success
+            *ngIf="contactFormModalName.valid && (contactFormModalName.dirty || contactFormModalName.touched)">Input
+            valid
+          </mdb-success>
+        </div>
+
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+          <input type="email" id="form29" class="form-control" mdbInput mdbValidate
+                 [formControl]="contactFormModalEmail">
+          <label for="form29">Your email</label>
+          <mdb-error
+            *ngIf="contactFormModalEmail.invalid && (contactFormModalEmail.dirty || contactFormModalEmail.touched)">
+            Input invalid
+          </mdb-error>
+          <mdb-success
+            *ngIf="contactFormModalEmail.valid && (contactFormModalEmail.dirty || contactFormModalEmail.touched)">Input
+            valid
+          </mdb-success>
+        </div>
+
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="tag" class="prefix grey-text"></mdb-icon>
+          <input type="text" id="form32" class="form-control" mdbInput mdbValidate
+                 [formControl]="contactFormModalSubject">
+          <label for="form32">Subject</label>
+          <mdb-error
+            *ngIf="contactFormModalSubject.invalid && (contactFormModalSubject.dirty || contactFormModalSubject.touched)">
+            Input invalid
+          </mdb-error>
+          <mdb-success
+            *ngIf="contactFormModalSubject.valid && (contactFormModalSubject.dirty || contactFormModalSubject.touched)">
+            Input valid
+          </mdb-success>
+        </div>
+
+        <div class="md-form">
+          <mdb-icon fas icon="pencil-alt" class="prefix grey-text"></mdb-icon>
+          <textarea type="text" id="form8" class="md-textarea form-control" rows="1" mdbInput mdbValidate
+                    [formControl]="contactFormModalMessage"></textarea>
+          <label for="form8">Your message</label>
+          <mdb-error
+            *ngIf="contactFormModalMessage.invalid && (contactFormModalMessage.dirty || contactFormModalMessage.touched)">
+            Input invalid
+          </mdb-error>
+          <mdb-success
+            *ngIf="contactFormModalMessage.valid && (contactFormModalMessage.dirty || contactFormModalMessage.touched)">
+            Input valid
+          </mdb-success>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button mdbBtn color="pink" class="waves-light" mdbWavesEffect>Add New Address
+          <mdb-icon far icon="address-card" class="left"></mdb-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

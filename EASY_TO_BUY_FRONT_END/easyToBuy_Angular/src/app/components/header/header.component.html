@@ -1,0 +1,43 @@
+<!--Main Navigation-->
+<mdb-navbar
+    SideClass="navbar navbar-expand-sm peach-gradient">
+    <a routerLink="/products">
+        <img
+           
+             alt="avatar mx-auto white"
+            rounded-circle img-fluidid="Easy Buy"
+            src="../assets/Easy Buy/instagram_profile_image_etb.png"
+            class="logoImage rounded-circle"
+            alt="Easy Buy"></a>
+        <links>
+
+            <mdb-navbar-brand *ngFor="let tempCat of categories">
+                <a
+                    class="nav-link"
+                    routerLink="/{{tempCat.categoryName}}/{{tempCat.categoryId}}"
+                    (click)="productsByCategoryId(tempCat)">{{tempCat.categoryName}}</a>
+            </mdb-navbar-brand>
+       
+            <mdb-navbar-brand class="searchProduct">
+                
+                <form class="form-inline waves-effect waves-light">
+                    <input
+                        #searchProdKey
+                        (keyup.enter)="searchProductByName(searchProdKey.value)"
+                        class="form-control mr-sm-2"
+                        type="text"
+                        placeholder="Search Your Product"
+                        aria-label="Search"></form>
+                    
+                        
+                </mdb-navbar-brand>
+                    <mdb-navbar-brand class="headerCart">
+                        <app-cart-status></app-cart-status>
+                    </mdb-navbar-brand>
+                    
+                    <mdb-navbar-brand class="headerSign">
+                        <app-user-signup></app-user-signup>
+                    </mdb-navbar-brand>
+       
+            </links>
+        </mdb-navbar>

@@ -1,0 +1,37 @@
+.fa-3x.signUp {
+    margin-left: 111px;
+}
+.fa,
+.fas {
+    font-weight: 900;
+    color: white;
+}
+.signUpSignInBtn {
+    width: 220px;
+}
+.img-fluid {
+    max-width: 49%;
+    height: auto;
+}
+.profileImage{
+  margin-left:47px;
+  color: white;
+}
+.dropdown.show .fadeInDropdown {
+    opacity: 1;
+    margin-left: 96px;
+}
+.btn {
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%); 
+    padding: 202.84rem -27.86rem;
+    font-size: .81rem;
+    transition: all .2s ease-in-out;
+    margin: 0.375rem;
+    border: 0;
+    border-radius: 0.125rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    white-space: normal;
+    word-wrap: break-word;
+    color: inherit;
+}

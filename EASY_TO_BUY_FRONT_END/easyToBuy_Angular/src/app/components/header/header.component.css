@@ -1,0 +1,37 @@
+.logoImage{
+    height:65px;
+    margin-left: -100px;
+}
+.nav-link{
+    padding: 0 43px 28px!important;
+    font-size: 21px!important;
+    letter-spacing: -0.7px;
+    color:white !important;
+    border-bottom: none!important;
+    font-weight: 500!important;
+    text-transform: capitalize;
+    font-weight: bold!important;
+    font-size: 12px;
+   
+}
+.fa-3x.cartIcon {
+    margin-left: -14px;
+}
+
+.searchProduct{
+    margin-left: -21px;
+    margin-bottom: auto;
+}
+.headerCart{
+    margin-left: 41px;
+    
+}
+.headerSign{
+    margin-left: 0px;
+    flex: 1.8;
+}
+.container{
+    max-width: fit-content;
+}
+
+

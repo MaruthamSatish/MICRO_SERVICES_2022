@@ -1,0 +1,70 @@
+<br>
+<div class="container .col-md-8">
+    <div *ngIf="cartItems.length > 0">
+    <mdb-card>
+        <table mdbTable>
+          <thead>
+            <tr class="peach-gradient">
+
+                <th class="headerDetails" scope="col"></th>
+                <th class="headerDetails" scope="col"><h4>Product</h4></th>
+                <th class="headerDetails" scope="col"><h4>Price</h4></th>
+                <th  class="headerDetailsQuantity" scope="col"><h4>Quantity</h4></th>
+                <th class="headerDetails" scope="col"><h4>Amount</h4></th>
+                <th class="headerDetails" scope="col"></th>
+
+            </tr>
+         </thead>
+         <tbody>
+            <tr mdbTableCol *ngFor="let tempCartItem of cartItems">
+                <td><img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder1.jpg" alt="Generic placeholder image"></td>
+                    <td>
+                       <p>{{tempCartItem.productName}}</p>
+                    </td>
+                    <td><p>{{tempCartItem.productPrice | currency: 'INR'}}</p></td>
+                        <td>
+                            
+                            <div>
+                                <div>
+                                    
+                                    
+                                    <button type="button" (click)="decrementQuantity(tempCartItem)" size="sm" mdbBtn color="primary" mdbWavesEffect>
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <span>{{tempCartItem.quantity}}</span>
+                                    <button type="button" (click)="incrementQuantity(tempCartItem)" size="sm" mdbBtn color="primary" mdbWavesEffect>
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    
+                                </div>
+                                
+                               
+                            </div>
+                        </td>
+                        <td><span>{{tempCartItem.quantity*tempCartItem.productPrice | currency: 'INR'}}</span></td>
+                         <td><button type="button" (click)="removeCartItem(tempCartItem)" size="sm" mdbBtn color="danger" mdbWavesEffect>
+                                <i class="fas fa-times" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                      
+                        <td colspan="5"></td>
+                        <td>
+                            <h4> Total Quantity:{{totalQuantity}} </h4>
+                            <p><mdb-badge pill="true" default="true">Shipping Free</mdb-badge></p>
+                            <h4>Total Price: {{totalPrice | currency:'INR'}}</h4>
+                            <button type="button" mdbBtn color="primary" routerLink="/checkout" mdbWavesEffect>Purchase</button>
+                        </td>
+                    </tr>
+                 </tbody>
+               </table>
+            </mdb-card>
+            </div>
+            <div *ngIf="cartItems.length == 0">
+                <div class="alert alert-primary" role="alert">
+                    <i class="fa fa-frown-o" aria-hidden="true">Your Cart is Empty..--<i class="fa fa-frown-o" aria-hidden="true"></i>
+                    </i>
+                </div>
+            </div>
+        </div>

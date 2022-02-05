@@ -1,0 +1,46 @@
+<div class="container mt-5">
+    <div *ngFor="let tempProducts of productsById">
+        <div class="jumbotron text-center hoverable p-4">
+            <div class="row">
+
+                <div class="col-md-4 offset-md-1 mx-3 my-3">
+
+                    <div class="view overlay waves-light" mdbWavesEffect>
+                        <img src="https://mdbootstrap.com/img/Photos/Others/laptop-sm.jpg" class="img-fluid"
+                            alt="Sample image for first version of blog listing">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="col-md-7 text-md-left ml-3 mt-3">
+
+                    <a href="#!" class="green-text">
+                        <h4 class="h6 pb-1">
+                            {{tempProducts.productName}}
+                        </h4>
+                    </a>
+                    <p class="font-weight-normal">{{tempProducts.productDescription}}
+                    <p class="font-weight-normal"><a><strong>Special Price </strong></a>{{tempProducts.productPrice | currency:'INR'}}
+                    </p>
+                    <div class="amber-text fa-xs mb-1">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <br>
+                    <br>
+                    <button mdbBtn type="button" gradient="peach" (click)="addToCart(tempProducts)" size="lg" mdbWavesEffect><i
+                            class="fa fa-shopping-cart fa-1x cartIcon">&nbsp;ADD TO CART</i></button>
+                    <button mdbBtn type="button" gradient="purple" size="lg" mdbWavesEffect><i
+                            class="fa fa-shopping-bag">&nbsp; BUY NOW </i></button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
